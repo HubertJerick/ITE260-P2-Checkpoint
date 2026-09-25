@@ -1,47 +1,28 @@
-def average(score1, score2, score3):
-   
-    total = score1 + score2 + score3
-    average = total / 3
-    return round(average, 2)
+print("      STUDENT ACTIVITY SCORE SYSTEM          ")
+print( )
 
- 
-print("STUDENT ACTIVITY SCORE SYSTEM")
-print()
+total = int(input("How many students? "))
 
- 
-while True:
-    count_input = input("How many students will you process?: ")
-    num_students = int(count_input)
-    if num_students >= 3:
-        break
-    print("Need at least 3 — you typed {num_students}. Try again please.")
-
-
- 
-for student_number in range(1, num_students + 1):
-    print("=======================")
-    print(f"STUDENT {student_number} of {num_students}")
+for i in range(1, total + 1):
+    print(f"\n Student{i}")
+    name = input("Enter name: ")
+    act1 = float(input("Activity 1: "))
+    act2 = float(input("Activity 2: "))
+    act3 = float(input("Activity 3: "))
     
-    name = input("Enter student name: ")
-    act1 = float(input("Act 1 Score: "))
-    act2 = float(input("Act 2 Score: "))
-    act3 = float(input("Act 3 Score: "))
+    average = (act1 + act2 + act3) / 3
     
-    avg_result = calculate_average(act1, act2, act3)
-
-    if avg_result >= 90:
-        standing = "Excellent"
-    elif avg_result >= 80:
-        standing = "Very Good"
-    elif avg_result >= 75:
-        standing = "Passed"
+    if average >= 90:
+        status = "Excellent"
+    elif average >= 80:
+        status = "Very Good"
+    elif average >= 75:
+        status = "Passed"
     else:
-        standing = "Failed"
+        status = "Failed"
+    
+    print(f"\nAverage: {average:.2f}")
+    print(f"Status: {status}")
+    print()
 
-  
-    print(f"Name    : {name}")
-    print(f"Scores  : Act1={act1} | Act2={act2} | Act3={act3}")
-    print(f"Average : {avg_result}")
-    print(f"Status  : {standing}")
-
-print("===========================")
+print("===============================================")
